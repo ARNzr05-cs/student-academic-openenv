@@ -29,13 +29,12 @@ This makes it ideal for:
 
 # 🧠 OpenEnv API
 The environment follows the standard OpenEnv API:
-
-```python
+python
 reset() -> Observation
 state() -> Observation
 step(action) -> observation, reward, done, info
 
-Typed Pydantic models:
+# Typed Pydantic models:
 Observation
 Action
 Reward
@@ -113,18 +112,18 @@ Install
 Bash
 pip install -r requirements.txt
 
--_-Run baseline
+# Run baseline
 Bash
 python scripts/baseline.py
 
-_-_Run GPT baseline
+# Run GPT baseline
 Windows PowerShell
 PowerShell
 $env:OPENAI_API_KEY="your_key"
 python scripts/gpt_baseline.py
 Run UI demo
 Bash
-python app.py
+python server/app.py
 Open:
 Plain text
 http://localhost:7860
@@ -145,8 +144,8 @@ openenv validate
 
 🤗 Hugging Face Deployment
 Bash
-huggingface-cli login
-openenv push --repo-id YOUR_USERNAME/student-academic-openenv
+hf auth login
+openenv push --repo-id ARNzr05-cs/student-academic-openenv
 
 📊 Expected Baseline Scores
 Typical heuristic baseline:
@@ -160,22 +159,31 @@ duplicate reminders
 exam movement resolution
 
 📁 Project Structure
-Plain text
 student-academic-openenv/
-├── openenv.yaml
-├── app.py
-├── Dockerfile
-├── Dockerfile.baseline
-├── README.md
-├── requirements.txt
-├── env/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── parser.py
-│   ├── tasks.py
-│   ├── grader.py
-│   ├── policies.py
-│   └── environment.py
-└── scripts/
-    ├── baseline.py
-    └── gpt_baseline.py
+│
+├─ .git/
+├─ requirements.txt
+├─ README.md
+├─ app.py
+├─ Dockerfile
+├─ Dockerfile.baseline
+├─ openenv.yaml
+├─ pyproject.toml
+├─ uv.lock
+│
+├─ env/
+│  ├─ init.py
+│  ├─ environment.py
+│  ├─ grader.py
+│  ├─ parser.py
+│  ├─ models.py
+│  ├─ policies.py
+│  └─ tasks.py
+│
+├─ server/
+│  ├─ init.py
+│  └─ app.py
+│
+└─ scripts/
+  └─ baseline.py
+  └─ gpt_baseline.py
