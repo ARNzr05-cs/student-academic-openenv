@@ -1,4 +1,4 @@
-from app import demo
+from demo import demo
 
 
 def main():
