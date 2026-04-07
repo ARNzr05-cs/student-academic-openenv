@@ -1,0 +1,9 @@
+name: student-academic-day
+entrypoint: env.environment:StudentAcademicDayEnv
+description: Student academic email triage and scheduling benchmark
+version: 1.1.0
+tags:
+  - openenv
+  - education
+  - workflow
+  - email
